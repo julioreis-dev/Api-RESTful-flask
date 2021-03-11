@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from environs import Env
 
 app = Flask(__name__)
-
+# novo
 # ___________________________ Variabel Enviroment _______________________________________ #
 env = Env()
 env.read_env()
