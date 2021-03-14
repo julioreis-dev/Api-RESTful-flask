@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from environs import Env
 
 app = Flask(__name__)
-# novo
+
 # ___________________________ Variabel Enviroment _______________________________________ #
 env = Env()
 env.read_env()
@@ -120,7 +120,7 @@ def get_managers_key():
         return jsonify(vessel=[resp.to_dict() for resp in contracts])
 
 
-@app.route('/all/members/name')
+@app.route('/vessels/members/name')
 def get_managers():
     name = request.args.get('desc')
     contracts = db.session.query(Contratos).filter_by(gerente=name).all()
