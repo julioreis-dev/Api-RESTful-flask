@@ -86,11 +86,11 @@ def fleet():
 
     if request.method == 'PATCH':
         vessel_icj = request.args.get('icj')
-        name = request.args.get('manager')
+        manager = request.args.get('manager')
         key_manager = request.args.get('key')
         result = db.session.query(Contratos).filter_by(icj=vessel_icj).first()
         if result:
-            result.gerente = name
+            result.gerente = manager
             result.chave_gerente = key_manager
             db.session.commit()
             return jsonify(response={"success": "Successfully updated the manager from the database."}), 200
